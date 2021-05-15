@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+	<Properties>
+	<Property name ="path">C:\Users\Hp\Desktop\</Property>
+	</Properties>
+
+	<Appenders>
+		<RollingFile name="rollingFile"
+			fileName="${path}RollingFile.log"
+			filePattern="${path}RollingFile-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern="%-5level %logger{%36} (%F:%L) - %msg%n"></PatternLayout>
+			
+			<Policies>
+				<SizeBasedTriggeringPolicy size="3 KB" />
+			</Policies>
+			
+			<DefaultRolloverStrategy max="25"></DefaultRolloverStrategy>
+			
+		</RollingFile>
+	</Appenders>
+	
+	<Loggers>
+		<Logger name="com.project" level="INFO" additivity="false">
+		<appender-ref ref="rollingFile"></appender-ref>
+		</Logger>
+	</Loggers>
+	
+	
+</Configuration>

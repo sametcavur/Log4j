@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{ISO8601} [%t] %-5level %logger{%36} - %msg%n" />
+		</Console>
+		<file name="file" fileName="C:\Users\Hp\Desktop\Logging.log">
+			<PatternLayout
+				pattern="%d{ISO8601} [%t] %-5level %logger{%36} - (%F:%L) - %msg%n" />
+		</file>
+	</Appenders>
+	<Loggers>
+		<Root level="ALL">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="file" />
+		</Root>
+	</Loggers>
+</Configuration>
